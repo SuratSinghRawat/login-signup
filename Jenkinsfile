@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage("Install Dependencies"){
             steps{
-                sh 'install npm@6.14.15'
+                sh 'npx npm@6.14.15 install'
             }
         }
 
