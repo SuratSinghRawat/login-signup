@@ -4,13 +4,13 @@ pipeline{
     stages{
         stage("Install Dependencies"){
             steps{
-                sh 'npm install@6.14.15'
+                sh 'install npm@6.14.15'
             }
         }
 
         stage("Test"){
             steps{
-                sh 'npm install'
+                sh 'npm test'
             }
         }
 
