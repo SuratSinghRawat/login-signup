@@ -3,7 +3,7 @@ pipeline{
     tools {nodejs "node"}
     environment {
         imageName = "rawatbluebell/react-login-app"
-        registoryCredential = "suratrawat"
+        registryCredential = "rawatbluebell"
         dockerImage = ''
     }
     stages{
@@ -22,7 +22,7 @@ pipeline{
         stage("building Image"){
             steps{
                 script{
-                   sudo dockerImage = docker.build imageName
+                   dockerImage = docker.build imageName
                 }
             }
         }
