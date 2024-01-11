@@ -9,7 +9,7 @@ pipeline{
     stages{
         stage("Install Dependencies"){
            steps{
-             sh 'npm ci'
+             sh 'yarn npm'
            }
         }
 
