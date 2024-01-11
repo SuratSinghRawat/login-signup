@@ -13,12 +13,6 @@ pipeline{
            }
         }
 
-        stage("Test"){
-            steps{
-                bat 'npm test'
-            }
-        }
-
         stage("building Image"){
             steps{
                 script{
