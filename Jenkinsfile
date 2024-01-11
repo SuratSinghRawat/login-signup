@@ -7,10 +7,10 @@ pipeline{
         dockerImage = ''
     }
     stages{
-        //stage("Install Dependencies"){
-        //   steps{
-        //     sh 'npm install'
-        //   }
+        stage("Install Dependencies"){
+           steps{
+             sh 'npm install -g'
+           }
         }
 
         stage("Test"){
