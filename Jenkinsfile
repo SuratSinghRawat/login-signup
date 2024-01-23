@@ -27,7 +27,7 @@ pipeline{
             steps{
                 script{
                     //docker.withRegistry("https://registry.hub.docker.com","dockerhub_creds"){
-                        docker.withRegistry("http://"+ registry,"Nexus-Cred"){
+                        docker.withRegistry('http://'+registry,registryCredential){
                         dockerImage.push("${env.BUILD_NUMBER}")
                     }
                 }
