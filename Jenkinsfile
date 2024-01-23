@@ -6,7 +6,7 @@ pipeline{
         // registryCredential = "rawatbluebell" // credentail for docker hub
         registryCredential="Nexus-Cred" // credentail for Nexus registry
         dockerImage = ''
-        registry="13.201.191.51:8082/"
+        registry="ec2-13-201-191-51.ap-south-1.compute.amazonaws.com:8082/" 
     }
     stages{
         stage("Install Dependencies"){
@@ -28,7 +28,8 @@ pipeline{
                 script{
                     //docker.withRegistry("https://registry.hub.docker.com","dockerhub_creds"){
                         docker.withRegistry('http://'+registry,registryCredential){
-                        dockerImage.push("${env.BUILD_NUMBER}")
+                        // dockerImage.push("${env.BUILD_NUMBER}")
+                         dockerImage.push('latest')
                     }
                 }
             }
