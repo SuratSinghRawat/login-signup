@@ -6,7 +6,7 @@ pipeline{
         // registryCredential = "rawatbluebell" // credentail for docker hub
         registryCredential="Nexus-Cred" // credentail for Nexus registry
         dockerImage = ''
-        registry="13.127.160.152:8082"
+        registry="13.201.191.51:8082/"
     }
     stages{
         stage("Install Dependencies"){
