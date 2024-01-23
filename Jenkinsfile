@@ -4,11 +4,11 @@ pipeline{
     //docker push 13.232.114.199:8082/react-login-app:8.0
     environment {
         //imageName = "rawatbluebell/react-login-app"
-        imageName = "react-login-app"
+        imageName = "Rawat-Private-Repo/react-login-app"
         // registryCredential = "rawatbluebell" // credentail for docker hub
         registryCredential="Nexus-Cred" // credentail for Nexus registry
         dockerImage = ''
-        registry="ec2-43-204-142-119.ap-south-1.compute.amazonaws.com:8081/repository/Rawat-Private-Repo/" 
+        registry="ec2-43-204-142-119.ap-south-1.compute.amazonaws.com:8082/" 
     }
     stages{
         stage("Install Dependencies"){
