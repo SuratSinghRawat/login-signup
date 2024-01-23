@@ -5,8 +5,8 @@ pipeline{
         imageName = "rawatbluebell/react-login-app"
         // registryCredential = "rawatbluebell" // credentail for docker hub
         registryCredential="Nexus-Cred" // credentail for Nexus registry
-        dockerImage = '3.110.167.229:8082'
-        registry=""
+        dockerImage = ''
+        registry="13.127.160.152:8082"
     }
     stages{
         stage("Install Dependencies"){
