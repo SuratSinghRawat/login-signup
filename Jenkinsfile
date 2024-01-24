@@ -34,7 +34,7 @@ pipeline{
                     //docker.withRegistry("https://registry.hub.docker.com","dockerhub_creds"){
                     //docker.withRegistry('http://'+registry,registryCredential){
                         // dockerImage.push("${env.BUILD_NUMBER}")
-                    withCredentials([usernamePassword(credentialsId: 'Nexus-Cred', usernameVariable: 'USER', passwordVariable: 'PASS' )]){
+                    withCredentials([usernamePassword(credentialsId: 'Nexus-Cred')]){
                        sh ' echo $PASS | docker login -u $USER --password-stdin $NEXUS_DOCKER_REPO'
                       
                          dockerImage.push('latest')
