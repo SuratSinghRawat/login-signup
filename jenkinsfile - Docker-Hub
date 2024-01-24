@@ -3,9 +3,8 @@ pipeline{
     tools {nodejs "node"}
   
     environment {
-        imageName = "react-login-app"
-        registryCredentials = "Nexus-Cred" 
-        registry="ec2-43-204-236-51.ap-south-1.compute.amazonaws.com:8082/"
+        imageName = "rawatbluebell/react-login-app"
+        registryCredential = "rawatbluebell" // credentail for docker hub
         dockerImage = ''
             }
     stages{
@@ -26,8 +25,8 @@ pipeline{
         stage("Deploy Image"){
             steps{
                 script{
-                    docker.withRegistry('http://'+registry, registryCredentials){
-                    dockerImage.push('Latest')
+                    docker.withRegistry("https://registry.hub.docker.com","dockerhub_creds"){
+                    dockerImage.push("${env.BUILD_NUMBER}")
                     
                     }
                 }
