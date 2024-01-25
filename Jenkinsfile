@@ -16,7 +16,7 @@ pipeline{
         stage("Upload Artifact"){
             steps{
                 script{
-                   bat "npm publish"
+                   sh "npm publish"
                 }
             }
         }
