@@ -3,11 +3,9 @@ pipeline{
     tools {nodejs "node"}
   
     environment {
-        imageName = "react-login-app"
-        registryCredentials = "Nexus-Cred" 
         registry="ec2-65-0-23-242.ap-south-1.compute.amazonaws.com:8082/"
-        dockerImage = ''
             }
+
     stages{
         stage("Install Dependencies"){
            steps{
@@ -15,24 +13,15 @@ pipeline{
            }
         }
 
-        stage("building Image"){
+        stage("Upload Artifact"){
             steps{
                 script{
-                   dockerImage = docker.build imageName
+                   bat "npm publish"
                 }
             }
         }
 
-        stage("Deploy Image"){
-            steps{
-                script{
-                    docker.withRegistry('http://'+registry, registryCredentials){
-                    dockerImage.push("${env.BUILD_NUMBER}")
-                    
-                    }
-                }
-            }
-        }
+        
 
     }
 }
