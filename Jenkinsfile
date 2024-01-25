@@ -5,7 +5,7 @@ pipeline{
     environment {
         imageName = "react-login-app"
         registryCredentials = "Nexus-Cred" 
-        registry="ec2-43-204-236-51.ap-south-1.compute.amazonaws.com:8082/"
+        registry="ec2-65-0-23-242.ap-south-1.compute.amazonaws.com:8082/"
         dockerImage = ''
             }
     stages{
