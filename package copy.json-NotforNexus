@@ -1,6 +1,7 @@
 {
   "name": "login-signup",
   "version": "0.1.0",
+  "private": true,
   "publishCOnfig":{
     "registry":"http://ec2-65-0-23-242.ap-south-1.compute.amazonaws.com:8081/repository/NodeJS-Repo/"
   },
