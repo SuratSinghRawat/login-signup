@@ -1,8 +1,6 @@
 pipeline{
     agent any
-    tools {nodejs "node"}
-  
-   
+    tools {nodejs "node"}   
 
     stages{
         stage("Install Dependencies"){
@@ -13,7 +11,7 @@ pipeline{
 
         stage("Upload Artifact"){
             steps{
-               bat "npm publish"
+               sh 'npm publish'
                 
             }
         }
